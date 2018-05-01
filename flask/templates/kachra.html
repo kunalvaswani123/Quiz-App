@@ -1,0 +1,66 @@
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='kachra.css')}}">
+
+{% endblock %}
+{% block content %} 
+  {%set score=0%}
+  <br><br><br><br><br>
+  <h1>{{current_user.username}} this is your result</h1>
+  <hr><br><br>
+    <table class="table" cellpadding="15">
+            <tr>
+               <td> QUESTION </td>
+               <td> CORRECT RESPONSE</td>
+               <td> YOUR RESPONSE </td>
+               <td> MARKS </td>
+            </tr>
+
+            {% for i in range(1,6) %}
+             
+               <tr>
+                
+                <td>{{lisk['questions'][i-1]}}</td>
+
+                <td style="text-align: center;">  {{lisk['answers'][i-1]}}</td>
+                
+                <td style="text-align: center;">  {{lisk['ganswers'][i-1]}}</td>
+                
+                
+                {%if lisk['answers'][i-1]==lisk['ganswers'][i-1] %}
+                <td style="text-align: center;">1</td>
+                {%else%}
+                <td style="text-align: center;">0</td>
+                {%endif%}
+                
+                
+
+                
+                {%if lisk['answers'][i-1]==lisk['ganswers'][i-1] %}
+                {%set score=score+1 %}
+                {%endif%}
+                
+                
+                </tr>
+              
+            {% endfor %}
+
+    </table>
+    <br><br><hr>
+    <h1>you scored {{skore}} out of 5 marks</h1>
+    <div style="margin-top: 1vw;">
+      <a class="final" href=" {{ url_for('dashboard')}}">Home</a>
+    </div>
+
+{% endblock %}
+
+        
+       
+      
+
+
+
+
+

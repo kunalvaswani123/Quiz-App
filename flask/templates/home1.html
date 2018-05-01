@@ -1,0 +1,54 @@
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+<script src="{{ url_for('static',filename='style.js') }}"></script> 
+{% endblock %}  
+{% block content %}
+
+<nav class="navbar">
+  <ul>
+    <li><a id="toggle" href="#" onclick="sidebarToggle()"><b>LEADERBOARDS</b></a></li>
+    <div style="padding-left: 40vw; display: flex;">
+    <li class="r0"><b><a href="http://127.0.0.1:5000/register/user">Register-User</a></b></li>
+    <li class="r0"><b><a href="http://127.0.0.1:5000/register/admin">Register-Admin</a></b></li>
+    <li class="r"><strong>Login:</strong></li>
+    </div>
+    <div style="display: flex;">
+    <li class="r1"><b><a href="{{ url_for('login')}}">&nbsp;User</a></b></li>
+    </div>
+    <div style="display: flex;">
+    <li class="r2"><b><a href="{{ url_for('loginadmin')}}">Admin</a></b></li>
+    </div>
+  </ul>
+</nav>
+<nav class="sidebar" id="sidebarHidden">
+  <ul>
+    <li class="lhead"><strong>Sports:</strong></li>
+    <li><a href="{{ url_for('leaderboard',cat='sports',subcat='cricket')}}">Cricket</a></li>
+    <li><a href="{{ url_for('leaderboard',cat='sports',subcat='football')}}">Football</a></li>
+    <li><a href="{{ url_for('leaderboard',cat='sports',subcat='hockey')}}">Hockey</a></li>
+    <br>
+    <li class="lhead"><strong>History:</strong></li>
+    <li><a href="{{ url_for('leaderboard',cat='history',subcat='ancient')}}">Ancient</a></li>
+    <li><a href="{{ url_for('leaderboard',cat='history',subcat='medieval')}}">Medieval</a></li>
+    <li><a href="{{ url_for('leaderboard',cat='history',subcat='modern')}}">Modern</a></li>
+    <br>
+    <li class="lhead"><strong>Culture:</strong></li>
+    <li><a href="{{ url_for('leaderboard',cat='culture',subcat='drama')}}">Drama</a></li>
+    <li><a href="{{ url_for('leaderboard',cat='culture',subcat='musicanddance')}}">Music and Dance</a></li>
+    <li><a href="{{ url_for('leaderboard',cat='culture',subcat='folk')}}">Folk</a></li>
+    <br>
+    <li class="lhead"><strong>General:</strong></li>
+    <li><a href="{{ url_for('leaderboard',cat='general',subcat='mix-bag')}}">Mix-Bag</a></li>
+    <li><a href="{{ url_for('leaderboard',cat='general',subcat='current_affairs')}}">Current-Affairs</a></li>
+    <li><a href="{{ url_for('leaderboard',cat='general',subcat='static')}}">Static</a></li>
+  </ul>
+</nav>
+<div id="wallimg">
+<img src="{{ url_for('static',filename='index.jpeg') }}" style="height:52vw;width:99%;" alt=image> 
+<div><p class=text><strong>QuizIt..</strong></p></div>
+</div>
+
+{% endblock %}

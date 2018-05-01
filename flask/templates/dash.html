@@ -1,0 +1,400 @@
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+
+{{super()}}
+
+<link rel="stylesheet" href="{{url_for('.static', filename='dash.css')}}">
+{% endblock %}	
+{% block content %}
+
+<body class="is-responsive en"  >
+<div id="sticky_header" class="ui sticky v2" >
+<header class="header  breadcrumb-present  navbar" id="header">
+<div class="header__links__container">
+<div class="header__links__wrapper">
+</div>
+</div>
+<div class="header__container">
+<div>
+<p id="quiz">
+QuizIt..
+<a id="quiz2" href="{{ url_for('logout')}}">Logout</a>
+</p>
+</div>
+</div>
+</header>
+<div id="resp-search-container" class="search-box-area"></div>
+
+
+<div class="wrapper ">
+<div class="row mtop0">
+<div class="col-s-16">
+
+<h1 class="mb5" style="margin-left:6%;">Trending Quizzes..</h1>
+</div>
+</div>
+<div class="row mtop mbot2">
+
+</div>			
+</div>
+
+
+<div class="col-l-9 col-s-16" style="margin-left: 20%;">
+<div class="subzone-content">
+<div class="white-bg sub-cat-container  mbot " data-category-id="2" style="border-radius: 4px; border:1px solid #e7e7e7;">
+<div class="pr15 pl15 ptop0">
+<div class="left floated">
+<div id="spo" class="fontsize1 semi-bold mt2" style="line-height:24px;">
+Sports:
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="mr15 ml15 mt5 bt"></div>
+<div class="cat-subzone-res ptop0 ml15 mr20">
+<div class="row entity-ads-snippet-track">
+
+
+<!--SubCategories-->
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='cric.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/sports/cricket/1/no">Cricket</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/sports/cricket/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/sports/cricket">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/performance/sports/cricket">Your Performance</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/sports/cricket">Google Analysis</a>
+
+</div>
+</div>
+</div>  
+</div>
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='foot.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/sports/football/1/no">Football</a>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/sports/football/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/sports/football">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/performance/sports/football">Your Performance</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/sports/football">Google Analysis</a>
+</div>
+</div>
+</div>  
+</div>
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='hoc.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/sports/hockey/1/no">Hockey</a>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/sports/hockey/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/sports/hockey">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/performance/sports/hockey">Your Performance</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/sports/hockey">Google Analysis</a>
+
+</div>
+</div>
+</div>  
+</div>
+<!--endit-->
+</div>
+<div class="pb5 bt ptop0  ta-right"></div>
+</div>
+</div>
+<div class="white-bg sub-cat-container  mbot " data-category-id="2" style="border-radius: 4px; border:1px solid #e7e7e7;">
+<div class="pr15 pl15 ptop0">
+<div class="left floated">
+<div id="ss" class="fontsize1 semi-bold mt2" style="line-height:24px;">
+History:
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="mr15 ml15 mt5 bt"></div>
+<div class="cat-subzone-res ptop0 ml15 mr20">
+<div class="row entity-ads-snippet-track">
+
+
+<!--SubCategories-->
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='anc.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/history/ancient/1/no">Ancient</a>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/history/ancient/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/history/ancient">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/performance/history/ancient">Your Performance</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/history/ancient">Google Analysis</a>
+
+</div>
+</div>
+</div>  
+</div>
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='med.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/history/medieval/1/no">Medieval</a>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/history/medieval/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/history/medieval">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/performance/history/medieval">Your Performance</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/history/medieval">Google Analysis</a>
+
+</div>
+</div>
+</div>  
+</div>
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='mod.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/history/modern/1/no">Modern</a>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/history/modern/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/history/modern">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/performance/history/modern">Your Performance</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/history/modern">Google Analysis</a>
+
+</div>
+</div>
+</div>  
+</div>
+<!--endit-->
+</div>
+<div class="pb5 bt ptop0  ta-right"></div>
+</div>
+</div>
+<div class="white-bg sub-cat-container  mbot " data-category-id="2" style="border-radius: 4px; border:1px solid #e7e7e7;">
+<div class="pr15 pl15 ptop0">
+<div class="left floated">
+<div id="cul" class="fontsize1 semi-bold mt2" style="line-height:24px;">
+Culture:
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="mr15 ml15 mt5 bt"></div>
+<div class="cat-subzone-res ptop0 ml15 mr20">
+<div class="row entity-ads-snippet-track">
+
+
+<!--SubCategories-->
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='drama.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/culture/drama/1/no">Drama</a>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/culture/drama/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/culture/drama">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/performance/culture/drama">Your Performance</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/culture/drama">Google Analysis</a>
+
+</div>
+</div>
+</div>  
+</div>
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='musad.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/culture/musicanddance/1/no">Music and Dance</a>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/culture/musicanddance/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/culture/musicanddance">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/culture/musicanddance">Google Analysis</a>
+</div>
+</div>
+</div>  
+</div>
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='folk.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/culture/folk/1/no">Folk</a>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/culture/folk/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/culture/drama">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/performance/culture/drama">Your Performance</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/culture/drama">Google Analysis</a>
+
+</div>
+</div>
+</div>  
+</div>
+<!--endit-->
+</div>
+<div class="pb5 bt ptop0  ta-right"></div>
+</div>
+</div>
+<div class="white-bg sub-cat-container  mbot " data-category-id="2" style="border-radius: 4px; border:1px solid #e7e7e7;">
+<div class="pr15 pl15 ptop0">
+<div class="left floated">
+<div id="ss" class="fontsize1 semi-bold mt2" style="line-height:24px;">
+General
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="mr15 ml15 mt5 bt"></div>
+<div class="cat-subzone-res ptop0 ml15 mr20">
+<div class="row entity-ads-snippet-track">
+
+
+<!--SubCategories-->
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='mixed.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/general/mix-bag/1/no">Mix-Bag</a>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/general/mix-bag/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/general/mix-bag">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/performance/general/mix-bag">Your Performance</a><br>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/general/mix-bag">Google Analysis</a>
+
+</div>
+</div>
+</div>  
+</div>
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='modi.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/general/current_affairs/1/no">Current-Affairs</a>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/general/current_affairs/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/general/current_affairs">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/performance/general/current_affairs">Your Performance</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/general/current_affairs">Google Analysis</a>
+
+</div>
+</div>
+</div>  
+</div>
+<div class="col-l-1by3 col-s-1by3  pr10 pl10 ">
+<div class=" pbot0 subzone_res_card
+"
+style=""  data-campaign-id="0" data-banner-id="0" data-ad-category-id="2"
+data-ad-zone-id="3729" data-ad-position="1" data-entity-id="97858"
+data-entity-type="restaurant" data-slot-id="0" data-creative-id="0"
+data-category-sequence="1"
+data-rating="3.6"
+data-pixel-tracking='null'
+>
+<img src="{{ url_for('static',filename='seven.jpeg')}}" style="height:11vw;width:99%;">
+<div class="pt5 pbot0 ad_info">
+<div style="">
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/general/static/1/no">Static</a>
+<br><a class="res_name" id="subcat" href="http://127.0.0.1:5000/quiz/general/static/1/yes">Continue Previous Quiz</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/leaderboard/general/static">Leaderboard</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/performance/general/static">Your Performance</a><br>
+<a class="res_name" id="subcat" href="http://127.0.0.1:5000/piechart/general/static">Google Analysis</a>
+
+</div>
+</div>
+</div>  
+</div>
+<!--endit-->
+</div>
+<div class="pb5 bt ptop0  ta-right"></div>
+</div>
+</div>
+
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "bootstrap/base.html" %}
+{% block styles%}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='lead.css')}}">
+{%endblock%}
+{% block content %} 
+  {%set score=0%}
+  <header>Leaderboard</header><hr>
+    <table border = 1 style="margin-left: 37%;">
+            <tr>
+                <th>RANK</th>
+               <th> USERNAME </th>
+               <th> SCORE </th>
+            </tr>
+
+            {%for i in lis%}
+
+                <tr>
+                    <td>{{i[3]}}</td>
+                    <td>{{i[0]}}</td>
+                    
+                    {%if i[2]!=0%}
+                    <td>{{i[1]}}</td>
+                    {%else%}
+                    <td>N.A</td>                    
+                    {%endif%}
+                    
+                </tr>
+
+            {%endfor%}
+    </table>
+{%endblock%}

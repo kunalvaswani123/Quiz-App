@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Pagination</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      {% for thread in thread.items %}
+
+       <h>{{thread.question}}</h>
+
+        <div class="alert alert-primary" role="alert">
+          {{ thread.option_1 }}
+          {{ thread.option_2 }}
+          {{ thread.option_3 }}
+          {{ thread.option_4 }}
+        </div>
+
+      {% endfor %}
+
+      {% for page in thread.iter_pages(left_edge=3, right_edge=3, left_current=3, right_current=3) %}
+
+        {% if page %}
+          <a href="{{ url_for('threads', page_num=page) }}">{{ page }}</a>
+        {% else %}
+          ...
+        {% endif %}
+
+      {% endfor %}
+
+    </div><!-- /.container -->
+
+  </body>
+</html>

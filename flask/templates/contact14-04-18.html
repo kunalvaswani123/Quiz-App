@@ -1,0 +1,83 @@
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='quiz.css')}}">
+<script src="{{ url_for('static',filename='correction.js') }}"></script> 
+
+{% endblock %}	
+{% block content %}
+	
+{% for thread in thread.items %}
+<div class="container-fluid bg-info">
+    <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h3><span class="label label-warning" id="qid">2</span> {{thread.question}}</h3>
+        </div>
+        <div class="modal-body">
+            <div class="col-xs-3 col-xs-offset-5">
+               <div id="loadbar" style="display: none;">
+                  <div class="blockG" id="rotateG_01"></div>
+                  <div class="blockG" id="rotateG_02"></div>
+                  <div class="blockG" id="rotateG_03"></div>
+                  <div class="blockG" id="rotateG_04"></div>
+                  <div class="blockG" id="rotateG_05"></div>
+                  <div class="blockG" id="rotateG_06"></div>
+                  <div class="blockG" id="rotateG_07"></div>
+                  <div class="blockG" id="rotateG_08"></div>
+              </div>
+          </div>
+
+          <div class="quiz" id="quiz" data-toggle="buttons"><br>
+          <input type="checkbox" name="q1" value="1" id="1">{{thread.option_1}}<br>
+          <input type="checkbox" name="q2" value="2" id="2">{{thread.option_2}}<br>
+          <input type="checkbox" name="q3" value="3" id="3">{{thread.option_3}}<br>
+          <input type="checkbox" name="q4" value="4" id="4">{{thread.option_4}}<br>
+       	  </div>
+
+          <br>
+          <button  id="next" onclick="func1({{thread.answer}},{{page_num}},{{correct}},{{record}})">next</button>
+
+          {% endfor %}
+
+   </div>
+   <div class="modal-footer text-muted">
+    <span id="answer"></span>
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+    <div class="container">
+
+{% for page in thread.iter_pages(left_edge=3, right_edge=3, left_current=3, right_current=3) %}
+
+        {% if page %}
+<a href="{{ url_for('contact', page_num=page,cat=cat,subcat=subcat,data=data,record=record,correct=correct) }}" style="font-size: 30px">{{ page }}</a>
+        {% else %}
+          ...
+        {% endif %}
+
+      {% endfor %}
+
+<button  id="next" onclick="func2()">submit</button>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

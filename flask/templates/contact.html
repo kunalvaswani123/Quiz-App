@@ -1,0 +1,72 @@
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='quiz.css')}}">
+{% endblock %}    
+{% block content %}
+<header><strong>Prepare to QuizIt</strong></header>  
+{% for thread in thread.items %}
+            <h3><strong>{{thread.question}}</strong></h3>
+        
+       {%if f>1 %}
+       <h3><strong>Multiple-choice correct type</strong></h3>
+       {%else%}
+       <h3><strong>Single-choice correct type</strong></h3>
+       {%endif%}
+
+        <form action="{{url_for('process',cat=cat,subcat=subcat,num=page_num,is_continue=is_continue,thread=thread)}}" method="post">
+          
+          {%if '1' in quark %}
+          <input type="checkbox" name="check" value="1" id="check" checked><label id="ch">{{thread.option_1}}</label><br>
+          {%else%}
+          <input type="checkbox" name="check" value="1" id="check"><label id="ch">{{thread.option_1}}</label><br>
+          {%endif%}
+
+          {%if '2' in quark %}
+          <input type="checkbox" name="check" value="2" id="check" checked><label id="ch">{{thread.option_2}}</label><br>
+          {%else%}
+          <input type="checkbox" name="check" value="2" id="check"><label id="ch">{{thread.option_2}}</label><br>
+          {%endif%}
+          
+          {%if '3' in quark %}
+          <input type="checkbox" name="check" value="3" id="check" checked><label id="ch">{{thread.option_3}}</label><br>
+          {%else%}
+          <input type="checkbox" name="check" value="3" id="check"><label id="ch">{{thread.option_3}}</label><br>
+          {%endif%}
+          
+          
+          {%if '4' in quark %}
+          <input type="checkbox" name="check" value="4" id="check" checked><label id="ch">{{thread.option_4}}</label><br>
+          {%else%}
+          <input type="checkbox" name="check" value="4" id="check"><label id="ch">{{thread.option_4}}</label><br>
+          {%endif%}
+          
+
+          </div>
+<input class="save" type="submit" name="save" value="SAVE">
+        </form>
+        <div style="margin-top: 1vw">
+        <a class="home" href=" {{ url_for('dashboard')}}">Pause and Go to Home</a>     
+        </div>
+        <form action=" {{ url_for('evaluate',cat=cat,subcat=subcat)}} ">
+        
+          <input class="quit" type="submit" name="END" value="SUBMIT QUIZ">
+        </form>
+          {% endfor %}
+
+      <footer>Questions</footer>
+    <div class="container" style="margin-top:1vw;margin-left: 38.5%;">
+{% for page in thread.iter_pages(left_edge=3, right_edge=3, left_current=3, right_current=3) %} 
+          
+        {% if page %}
+<a id="page" href="{{ url_for('contact', page_num=page,cat=cat,subcat=subcat,data=data,is_continue=is_continue,quark=quark) }}" style="font-size: 30px">{{ page }}</a>
+        {% else %}
+          ...
+        {% endif %}
+
+      {% endfor %}
+
+{% endblock %}
+</div>
+   

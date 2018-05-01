@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{url_for('.static', filename='home.css')}}">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content .header {
+    background: red;
+    padding: 16px;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    background-color: #ccc;
+    height: 250px;
+}
+
+.column a {
+    float: none;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.column a:hover {
+    background-color: #ddd;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://127.0.0.1:5000/login">Home</a>
+  <a href="http://127.0.0.1:5000/register">register</a>
+  <a href="http://127.0.0.1:5000/login">login</a>
+  <a href="http://127.0.0.1:5000/leaderboards">leaderboards</a>
+            <div class="dropdown">
+    <button class="dropbtn">QUIZ
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <div class="header">
+      </div>   
+      <div class="row">
+        <div class="column">
+          <form>
+          <h3>Category 1</h3>
+          <!--<label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span><input type="checkbox" value="1" action="{{url_for(contact)}}">Link 1<br></label>
+           <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span><input type="checkbox" value="2" action="{{url_for(contact)}}">Link 1<br></label>
+           <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span><input type="checkbox" value="2" action="{{url_for(contact)}}">Link 1<br></label>
+           <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span><input type="checkbox" value="2" action="{{url_for(contact)}}">Link 1<br></label>
+        </form>!-->
+          <a href="http://127.0.0.1:5000/login">Link 1</a>
+          <a href="http://127.0.0.1:5000/login">Link 2</a>
+          <a href="http://127.0.0.1:5000/login">Link 3</a>
+       
+        </div>
+
+        <div class="column">
+          <h3>Category 2</h3>
+          <a href="http://127.0.0.1:5000/login">Link 1</a>
+          <a href="http://127.0.0.1:5000/login">Link 2</a>
+          <a href="http://127.0.0.1:5000/login">Link 3</a>
+        </div>
+        <div class="column">
+          <h3>Category 3</h3>
+          <a href="http://127.0.0.1:5000/login">Link 1</a>
+          <a href="http://127.0.0.1:5000/login">Link 2</a>
+          <a href="http://127.0.0.1:5000/login">Link 3</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<div style="padding:16px">
+  <h3 style="text-align: center;font-size:100px">QuizIt..</h3>
+</div>
+
+<!--<div class="container-fluid bg-info">
+    <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h3><span class="label label-warning" id="qid">-></span>Topic</h3>
+        </div>
+        <div class="modal-body">
+            <div class="col-xs-3 col-xs-offset-5">
+               <div id="loadbar" style="display: none;">
+                  <div class="blockG" id="rotateG_01"></div>
+                  <div class="blockG" id="rotateG_02"></div>
+                  <div class="blockG" id="rotateG_03"></div>
+                  <div class="blockG" id="rotateG_04"></div>
+                  <div class="blockG" id="rotateG_05"></div>
+                  <div class="blockG" id="rotateG_06"></div>
+                  <div class="blockG" id="rotateG_07"></div>
+                  <div class="blockG" id="rotateG_08"></div>
+              </div>
+          </div>
+
+          <div class="quiz" id="quiz" data-toggle="buttons">
+           <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q1" value="1">Subtopic</label>
+           <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q1" value="1">Subtopic</label>
+          </div>
+            <br>
+            <input type="submit" name="nxt_page" value="Next" id="next">
+   </div>!-->
+   <div class="modal-footer text-muted">
+    <span id="answer"></span>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

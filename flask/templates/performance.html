@@ -1,0 +1,46 @@
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='lead.css')}}">
+{% endblock %}
+{% block content %} 
+<header class="perhead" style="margin-top: 2vw;"> Welcome {{current_user.username}} </header>
+<header class="perhead" style="margin-top: 2vw;"> Your Performance </header><hr>
+<table style="margin-left: 33.5%;margin-top:4vw;">
+	<tr>
+		<td>STATUS</td>
+		{%if obj.isquiz_complete==1%}
+		<td>COMPLETED</td>
+		{%else%}
+		<td>NOT SUBMITTED</td>
+		{%endif%}
+	</tr>
+	
+	<tr>
+		<td>SCORE</td>
+		{%if obj.isquiz_complete==1%}
+		<td>{{obj.quiz_score}}</td>
+		{%else%}
+		<td>-</td>
+		{%endif%}
+
+	</tr>
+
+	<tr>
+		<td>GLOBAL HIGHEST</td>
+		<td>{{global_topper}}</td>
+	</tr>
+
+	<tr>
+		<td>GLOBAL RANK</td>
+		{%if obj.isquiz_complete==1%}
+		<td>{{global_rank}}</td>
+		{%else%}
+		<td>-</td>
+		{%endif%}
+
+	</tr>
+
+	</table>
+		
+{% endblock %}

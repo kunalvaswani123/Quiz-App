@@ -1,0 +1,45 @@
+@font-face{
+font-family:kunal;
+src:url(Quicksand_Light.otf);
+}
+.table{
+margin:0px auto;
+border-collapse: collapse;
+
+}
+table td {
+  border: 2px solid black; 
+}
+table tr:first-child td {
+  border-top: 0;
+}
+table tr td:first-child {
+  border-left: 0;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}
+table tr td:last-child {
+  border-right: 0;
+}
+tr{
+	font-family:kunal;
+	text-align: center;
+	font-size: 2vw;
+}
+h1{
+	font-size:3vw;
+	color:black;
+	font-family:kunal;
+	text-align: center;	
+}
+hr{
+	width: 40vw;
+	color:black;
+}
+.final{
+	margin-left: 43%;
+	font-family: kunal;
+	font-size: 4vw;
+	color:black;
+}
